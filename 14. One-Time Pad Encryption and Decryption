@@ -1,0 +1,22 @@
+14. One-Time Pad Encryption
+Python
+text = "SENDMOREMONEY"
+key = [9,0,1,7,23,15,21,14,11,11,2,8,9]
+
+cipher = ""
+
+for i in range(len(text)):
+    x = (ord(text[i]) - 65 + key[i]) % 26
+    cipher += chr(x + 65)
+
+print("Cipher Text:", cipher)
+cipher = input("Enter cipher text: ").upper()
+key = [9,0,1,7,23,15,21,14,11,11,2,8,9]
+
+plain = ""
+
+for i in range(len(cipher)):
+    x = (ord(cipher[i]) - 65 - key[i]) % 26
+    plain += chr(x + 65)
+
+print("Plain Text:", plain)
