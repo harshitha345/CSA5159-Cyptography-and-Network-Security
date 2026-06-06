@@ -1,0 +1,14 @@
+plain = "abcdefghijklmnopqrstuvwxyz"
+cipher = input("Enter 26-letter key: ").lower()
+
+text = input("Enter text: ").lower()
+
+result = ""
+
+for ch in text:
+    if ch in plain:
+        result += cipher[plain.index(ch)]
+    else:
+        result += ch
+
+print("Cipher Text:", result)
