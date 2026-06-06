@@ -1,0 +1,23 @@
+text = input("Enter text: ").upper()
+k = int(input("Enter key: "))
+cipher = ""
+for ch in text:
+    if ch.isalpha():
+        cipher += chr((ord(ch) - 65 + k) % 26 + 65)
+    else:
+        cipher += ch
+print("Encrypted:", cipher)
+Decryption
+Python
+text = input("Enter cipher text: ").upper()
+k = int(input("Enter key: "))
+
+plain = ""
+
+for ch in text:
+    if ch.isalpha():
+        plain += chr((ord(ch) - 65 - k) % 26 + 65)
+    else:
+        plain += ch
+
+print("Decrypted:", plain)
