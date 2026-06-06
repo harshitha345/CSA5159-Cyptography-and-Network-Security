@@ -1,0 +1,23 @@
+def mod_inverse(a, m):
+    for i in range(m):
+        if (a * i) % m == 1:
+            return i
+    return -1
+
+cipher = input("Enter cipher text: ").upper()
+a = int(input("Enter value of a: "))
+b = int(input("Enter value of b: "))
+
+a_inv = mod_inverse(a, 26)
+
+plain = ""
+
+for ch in cipher:
+    if ch.isalpha():
+        y = ord(ch) - 65
+        x = (a_inv * (y - b)) % 26
+        plain += chr(x + 65)
+    else:
+        plain += ch
+
+print("Decrypted Text:", plain)
