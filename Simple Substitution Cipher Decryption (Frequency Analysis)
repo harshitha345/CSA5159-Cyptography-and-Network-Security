@@ -1,0 +1,21 @@
+from collections import Counter
+cipher = input("Enter cipher text: ")
+freq = Counter(cipher)
+print("\nCharacter Frequencies:")
+for ch, count in freq.items():
+    print(ch, ":", count)
+mapping = {
+    '8': 'e',
+    '?': 't'
+}
+
+plain = ""
+
+for ch in cipher:
+    if ch in mapping:
+        plain += mapping[ch]
+    else:
+        plain += ch
+
+print("\nPartially Decrypted Text:")
+print(plain)
