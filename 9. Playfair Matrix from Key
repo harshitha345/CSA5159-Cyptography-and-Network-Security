@@ -1,0 +1,14 @@
+key = input("Enter key: ").upper().replace("J", "I")
+
+matrix = []
+
+for ch in key:
+    if ch not in matrix:
+        matrix.append(ch)
+
+for ch in "ABCDEFGHIKLMNOPQRSTUVWXYZ":
+    if ch not in matrix:
+        matrix.append(ch)
+
+for i in range(0, 25, 5):
+    print(*matrix[i:i+5])
