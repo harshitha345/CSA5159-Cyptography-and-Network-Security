@@ -1,0 +1,14 @@
+text = input("Enter text: ").upper()
+a = 5
+b = 8
+
+result = ""
+
+for ch in text:
+    if ch.isalpha():
+        x = ord(ch) - 65
+        result += chr(((a * x + b) % 26) + 65)
+    else:
+        result += ch
+
+print("Cipher Text:", result)
